@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<fx:root dividerPositions="0.2907268170426065" prefHeight="600.0" prefWidth="800.0" type="SplitPane" xmlns="http://javafx.com/javafx/8.0.91" xmlns:fx="http://javafx.com/fxml/1">
+   <items>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+         <children>
+            <ListView fx:id="listViewPermissions" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+            <HBox spacing="5.0">
+               <children>
+                  <TextField fx:id="textFieldName" promptText="%name" HBox.hgrow="ALWAYS" />
+                  <ComboBox fx:id="comboBoxCommand" prefWidth="150.0" promptText="%command" />
+                  <Button minWidth="25.0" mnemonicParsing="false" onAction="#addPermission" text="+" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+      <VBox fx:id="vBoxDetails" disable="true">
+         <children>
+            <HBox alignment="CENTER" spacing="3.0">
+               <children>
+                  <Label text="%command" />
+                  <Label text=":" />
+                  <Label fx:id="labelCommand" />
+               </children>
+            </HBox>
+            <SplitPane fx:id="splitPaneDetails" dividerPositions="0.2168458781362007, 0.6935483870967742" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+               <items>
+                  <VBox spacing="3.0">
+                     <children>
+                        <Label text="%position" />
+                        <ListView fx:id="listViewPosition" VBox.vgrow="ALWAYS" />
+                        <Button maxWidth="1.7976931348623157E308" minWidth="25.0" mnemonicParsing="false" onAction="#addRestriction" text="+" />
+                     </children>
+                     <padding>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                     </padding>
+                  </VBox>
+                  <VBox fx:id="vBoxArguments" disable="true" prefHeight="200.0" prefWidth="100.0" spacing="3.0">
+                     <padding>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                     </padding>
+                     <children>
+                        <Label text="%allowed.arguments">
+                           <tooltip>
+                              <Tooltip text="%allowed.arguments.tooltip" />
+                           </tooltip></Label>
+                        <ListView fx:id="listViewAllowedArguments" VBox.vgrow="ALWAYS">
+                           <tooltip>
+                              <Tooltip text="%allowed.arguments.tooltip" />
+                           </tooltip></ListView>
+                        <HBox spacing="3.0">
+                           <children>
+                              <TextField fx:id="textFieldArgument" promptText="%argument" HBox.hgrow="ALWAYS" />
+                              <Button minWidth="25.0" mnemonicParsing="false" onAction="#addArgument" text="+" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="vBoxDefinedArguments" disable="true" prefHeight="200.0" prefWidth="100.0" spacing="3.0">
+                     <padding>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                     </padding>
+                     <children>
+                        <Label text="%defined.arguments" />
+                        <ListView fx:id="listViewDefinedArguments" onMouseClicked="#definedArgumentsClick" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toggleDefinedArgument" text="[+/-]" />
+                     </children>
+                  </VBox>
+               </items>
+            </SplitPane>
+         </children>
+         <padding>
+            <Insets left="3.0" />
+         </padding>
+      </VBox>
+   </items>
+</fx:root>

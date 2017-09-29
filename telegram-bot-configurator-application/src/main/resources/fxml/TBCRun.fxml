@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import org.controlsfx.control.TaskProgressView?>
+<?import org.controlsfx.control.ToggleSwitch?>
+
+<fx:root prefHeight="600.0" prefWidth="800.0" type="VBox" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox>
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="5.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+               <children>
+                  <ToggleSwitch fx:id="toggleSwitch" graphicTextGap="0.0" maxHeight="-Infinity">
+                     <HBox.margin>
+                        <Insets left="-20.0" />
+                     </HBox.margin></ToggleSwitch>
+                  <Label text="%run.bot" />
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox spacing="3.0">
+               <children>
+                  <Label text="%time.started" />
+                  <Label text=":" />
+                  <Label fx:id="labelTimeStarted" text="-" />
+               </children>
+            </HBox>
+            <HBox spacing="3.0">
+               <children>
+                  <Label text="%time.stopped" />
+                  <Label text=":" />
+                  <Label fx:id="labelTimeStopped" text="-" />
+               </children>
+            </HBox>
+            <HBox spacing="3.0">
+               <children>
+                  <Label text="%time.run" />
+                  <Label text=":" />
+                  <Label fx:id="labelTimeRun" text="-" />
+               </children>
+            </HBox>
+            <HBox spacing="3.0">
+               <children>
+                  <Label text="%amount.commands" />
+                  <Label text=":" />
+                  <Label fx:id="labelAmountCommands" text="-" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+      <TaskProgressView fx:id="taskProgressView" VBox.vgrow="ALWAYS" />
+   </children>
+</fx:root>

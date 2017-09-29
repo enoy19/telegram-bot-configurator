@@ -1,4 +1,4 @@
-#Telegram Bot Configurator
+# Telegram Bot Configurator
 
 This is a JavaFx-Application I made during my apprenticeship as a Software Developer.
 You can create simple commands for your [Telegram](https://telegram.org/) [Bot](https://core.telegram.org/bots) 
@@ -27,6 +27,6 @@ You might use some other libraries if you put the jars in that directory.#
 The application is in german (UI Components). But feel free to translate it in your language if you need it (telegram-bot-configurator-application/src/main/resources/fxml/bundles).
 If anybody really wants to use this application I can translate it in english.
 
-####Screenshots
+#### Screenshots
 
 comming soon...
